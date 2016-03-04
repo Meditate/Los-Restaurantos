@@ -1,0 +1,34 @@
+%section.articles
+  .review
+    .review-left
+      =image_tag @article.photo, size:'250'
+    .review-right
+      .review-head
+        .review-title
+          =@article.title
+        .review-rate
+          =@article.mark
+          %i.glyphicon.glyphicon-star
+      %p
+        =@article.body
+    .fix
+    -if (current_user) and (current_user.username == 'Igor')
+      %p
+        =link_to 'Back', articles_path
+        =link_to 'Edit', edit_article_path(@article)
+        =link_to 'Delete', article_path(@article), method: :delete
+  .comments
+    =render @article.comments
+  .commenter
+    -if current_user
+      -if @article.comments.where(user_id: current_user.id).count != 0
+        .window
+          %p
+            You already marked this place
+      -else
+        =render 'comments/form'
+    -else
+      .window
+        %p
+          =link_to 'Log in', new_user_session_path
+          first

@@ -1,0 +1,16 @@
+.comment
+  %p
+    .comment-title
+      =comment.user.username
+  %p
+    .review-testimonial
+      .testimonial-text
+        =comment.body
+  %p
+    .comment-rate
+      =comment.mark
+      %i.glyphicon.glyphicon-star
+  %hr
+  -if (current_user)and ((current_user.id == comment.user.id) or (current_user.username=='Igor'))
+    =link_to 'delete', [comment.article, comment] , method: :delete
+    =link_to 'edit',edit_article_comment_path(comment.article, comment)

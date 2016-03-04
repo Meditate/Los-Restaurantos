@@ -1,0 +1,47 @@
+#header
+%section#weare
+  %h1.slogan
+    We are three enthusiasts
+  #weare-three
+    .judge
+      .j-photo
+        =image_tag 'photo', size:'200'
+      .j-text
+        %h3
+          Igor
+    .judge
+      .j-photo
+        =image_tag 'photo', size:'200'
+      .j-text
+        %h3
+          Sergo
+    .judge
+      .j-photo
+        =image_tag 'photo', size:'200'
+      .j-text
+        %h3
+          Fara
+%section.reviews
+  %h1.slogan
+    Last reviews
+  .review
+    .review-left
+      =image_tag @article.photo, size:'250'
+    .review-right
+      .review-head
+        .review-title
+          =link_to @article.title, article_path(@article)
+        .review-rate
+          =@article.mark
+          %i.glyphicon.glyphicon-star
+      %p
+        =@random_comment.body
+      %p
+        rate:
+        %span.rate
+          =@random_comment.mark
+        |
+        =@random_comment.user.username
+    .fix
+  .more
+    =link_to 'All Restaurantos', articles_path, class:'btn btn-info'

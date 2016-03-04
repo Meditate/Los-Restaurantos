@@ -1,0 +1,17 @@
+=simple_form_for(@article) do |f|
+  -if @article.errors.any?
+    =pluralize(@article.errors.count,"error")
+    found
+    -@article.errors.full_messages.each do |msg|
+      =msg
+  .post
+    %p
+      =f.input :title
+    %p
+      =f.input :photo
+    %P
+      =f.input :body, html: { rows: 5}
+    %p
+      =f.input :mark
+    %p
+      =f.button :submit, class: 'btn btn-info'

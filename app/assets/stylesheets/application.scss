@@ -1,0 +1,237 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require normalize-rails
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+$main: #004e66;
+$secondary: #e1eef6;
+.wrap{
+  padding-top:80px;
+}
+.articles{
+  background-color: $main;
+  padding-top:40px;
+  padding-bottom: 40px;
+}
+.slogan{
+  padding:60px 0px 20px 0px;
+  margin:0px;
+  text-align: center;
+}
+
+@media (max-width:720px){
+  .prim-menu{
+    display: none;
+  }
+}
+#top{
+  height: 80px;
+  padding:10px;
+  margin:0;
+  width:100%;
+  position:fixed;
+  background: white;
+  z-index: 9;
+  -webkit-box-shadow: 0 1px 7px #BBBBBB ;
+  -moz-box-shadow: 0 1px 7px #BBBBBB ;
+  box-shadow: 0 1px 7px #BBBBBB ;
+}
+#top:after{
+  content: '';
+  clear: both;
+  display:table;
+}
+.logo-text a{
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  color: $main;
+  float:left;
+}
+.logo-text a:hover{
+  text-decoration: none;
+}
+.prim-menu {
+  margin-top:20px;
+  a{
+    color:$main;
+
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      text-transform: uppercase;
+      float: left;
+      padding: 0 5px 0 5px;
+    }
+  }
+}
+
+#header {
+  height:500px;
+  width:100%;
+  background:asset_url('header.jpg') no-repeat;
+  background-size: cover;
+}
+#weare{
+  width:100%;
+}
+#weare-three{
+  display:flex;
+  flex-flow: row wrap;
+  padding:20px 20px;
+}
+.judge{
+  width:300px;
+  height:300px;
+  margin:10px auto;
+  .j-photo{
+    clear:both;
+    width:100%;
+    text-align: center;
+    img {
+      border-radius: 100px;
+    }
+  }
+  .j-photo::after{
+    content:'';
+    display:table;
+    clear:both;
+  }
+  .j-text{
+    margin-top:20px;
+    text-align: center;
+  }
+}
+
+.window{
+  padding-top:30px;
+  margin:auto;
+  height:100px;
+  text-align: center;
+  width:80%;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.reviews{
+  background-color: $main;
+  padding-bottom: 40px;
+  .slogan{
+    color:white;
+  }
+}
+.review{
+  width:90%;
+  margin:40px auto;
+  border-radius:10px;
+  background-color: white;
+
+  .review-left{
+    float:left;
+    margin:5px;
+  }
+  @media (max-width:700px){
+    .review-left{
+      width:100%;
+      text-align: center;
+    }
+    .review-right{
+      clear:both;
+      width:100%;
+    }
+  }
+  .review-right{
+    float:left;
+    min-width:calc(100% - 260px);
+    padding:5px;
+    .review-head{
+      min-width:250px;
+      font-size: 30px;
+      color:$main;
+      .review-title{
+        float:left;
+      }
+      .review-rate{
+        text-align: right;
+      }
+    }
+    .review-head::after{
+      content:' ';
+      display:table;
+    }
+    .review-testimonial{
+      float:left;
+      width:77%;
+      min-width: 280px;
+      min-height:210px;
+      background-color: $secondary;
+      border-radius: 10px;
+      padding:10px;
+    }
+    .testimonial-under{
+      text-align: right;
+      font-style: italic;
+    }
+  }
+  .rate{
+    font-size: 30px;
+    color:$main;
+  }
+  .fix{
+    clear:both;
+  }
+}
+.more{
+  margin:60px 0px 0px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  .btn{
+    width:300px;
+  }
+}
+
+.comments{
+  width:90%;
+  margin:auto;
+  border-radius:10px;
+  background-color: white;
+  min-height:200px;
+  padding:5px 0px 5px 0px;
+}
+.comment{
+  padding:10px;
+  margin:10px;
+  .comment-title{
+    font-size: 20px;
+    color:$main;
+  }
+  .comment-rate{
+    clear:both;
+    text-align: right;
+    font-size: 20px;
+    color:$main;
+
+  }
+}
+.commenter{
+  width:90%;
+  padding:40px;
+  margin:20px auto;
+  border-radius:10px;
+  background-color: white;
+  min-height:100px;
+}

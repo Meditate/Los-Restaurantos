@@ -1,0 +1,7 @@
+%h1
+  Edit opinion
+=simple_form_for([@article, @comment]) do |f|
+  =f.input :body
+  =f.input :mark
+  =f.submit
+=link_to 'back', article_path(@article)

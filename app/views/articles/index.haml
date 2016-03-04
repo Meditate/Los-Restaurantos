@@ -1,0 +1,22 @@
+%section.articles
+  -@articles.each do |article|
+    .review
+      .review-left
+        =image_tag article.photo, size: '250'
+      .review-right
+        .review-head
+          .review-title
+            =link_to article.title, article_path(article)
+          .review-rate
+            =article.mark
+            %i.glyphicon.glyphicon-star
+
+        %p
+          =article.comments.first.body
+        %p
+          rate:
+          %span.rate
+            =article.comments.first.mark
+          |
+          =article.comments.first.user.username
+      .fix
