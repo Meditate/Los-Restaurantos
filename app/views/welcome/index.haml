@@ -5,19 +5,19 @@
   #weare-three
     .judge
       .j-photo
-        =image_tag 'photo', size:'200'
+        =image_tag 'http://www.clker.com/cliparts/A/Y/O/m/o/N/placeholder-hi.png', size:'200'
       .j-text
         %h3
           Igor
     .judge
       .j-photo
-        =image_tag 'photo', size:'200'
+        =image_tag 'http://www.clker.com/cliparts/A/Y/O/m/o/N/placeholder-hi.png', size:'200'
       .j-text
         %h3
           Sergo
     .judge
       .j-photo
-        =image_tag 'photo', size:'200'
+        =image_tag 'http://www.clker.com/cliparts/A/Y/O/m/o/N/placeholder-hi.png', size:'200'
       .j-text
         %h3
           Fara
@@ -33,16 +33,20 @@
           .review-title
             =link_to @article.title, article_path(@article)
           .review-rate
-            =@article.mark
+            -if (@article.mark)
+              =@article.mark
+            -else
+              0
             %i.glyphicon.glyphicon-star
-        %p
-          =@random_comment.body
-        %p
-          rate:
-          %span.rate
-            =@random_comment.mark
-          |
-          =@random_comment.user.username
+        -if @article.comments.count >0
+          %p
+            =@random_comment.body
+          %p
+            rate:
+            %span.rate
+              =@random_comment.mark
+            |
+            =@random_comment.user.username
       .fix
   .more
     =link_to 'All Restaurantos', articles_path, class:'btn btn-info'

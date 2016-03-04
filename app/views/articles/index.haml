@@ -10,13 +10,13 @@
           .review-rate
             =article.mark
             %i.glyphicon.glyphicon-star
-
-        %p
-          =article.comments.first.body
-        %p
-          rate:
-          %span.rate
-            =article.comments.first.mark
-          |
-          =article.comments.first.user.username
+        -if article.comments.count > 0
+          %p
+            =article.comments.first.body
+          %p
+            rate:
+            %span.rate
+              =article.comments.first.mark
+            |
+            =article.comments.first.user.username
       .fix
